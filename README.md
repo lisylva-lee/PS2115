@@ -39,7 +39,7 @@ services:
     container_name: ps2115
     restart: unless-stopped
     ports:
-      - "9797:8080" # Web UI / API 端口
+      - "8080:8080" # Web UI / API 端口
       - "8099:8099" # 内部通信/中间件反代端口
     volumes:
       - ./data:/app/data
