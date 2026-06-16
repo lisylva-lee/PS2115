@@ -31,7 +31,7 @@ version: '3.8'
 
 services:
   ps2115:
-    image: lisylva/ps2115:latest # 或指定固定版本号
+    image: lisylva/ps2115:latest
     container_name: ps2115
     restart: unless-stopped
     ports:
