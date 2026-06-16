@@ -37,6 +37,7 @@ services:
     ports:
       - "8080:8080" # Web UI / API 端口
       - "8099:8099" # 内部通信/中间件反代端口
+      - "15222:15222" # web端口需在config.yaml配置
     volumes:
       - ./data:/app/data
       - ./strm:/app/strm
@@ -53,9 +54,18 @@ services:
 ```yaml
 # 基础服务配置
 server:
+  port: 8080                        #web进入端口
   username: admin
   password: admin123
   jwt_secret: ps2115-secret-key-change-me
+webdav:
+  enabled: true
+  port: 15222
+  username: admin
+  password: admin123
+  mount_dir: "3140139588359750069"              # 0=根目录，或指定某个 CID
+  redirect_base_url: "http://10.168.1.248:9797"       # 空=自动拼接 http://localhost:8080 如果docker的环境变量 9797:8080即填 9797
+  cache_ttl: 300              # 目录缓存 5 分钟
 
 # CloudSaver （接入订阅系统）
 cloudsaver:
