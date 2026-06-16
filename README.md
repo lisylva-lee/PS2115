@@ -64,7 +64,7 @@ webdav:
   username: admin
   password: admin123
   mount_dir: "3140139588359750069"              # 0=根目录，或指定某个 CID
-  redirect_base_url: "http://10.168.1.248:9797"       # 空=自动拼接 http://localhost:8080 如果docker的环境变量 9797:8080即填 9797
+  redirect_base_url: "http://x.x.x.x:xxxx"       # 空=自动拼接 http://localhost:8080 如果docker的环境变量 xxxx:8080即填 xxxx
   cache_ttl: 300              # 目录缓存 5 分钟
 
 # CloudSaver （接入订阅系统）
